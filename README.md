@@ -68,6 +68,11 @@ kubectl get hpa classifier-api --watch
 # get yaml for an object
 kubectl get service classifier-api -o yaml --> app-service.yaml
 
+# add prometheus to helm
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+
+# update helm
+helm repo update
 
 
 # install prometheus
