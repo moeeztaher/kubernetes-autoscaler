@@ -37,7 +37,7 @@ kubectl get pods -n ingress-nginx
 
 
 # expose the web app deployment via a service of type NodePort
-kubectl expose deployment classifier-api --type=NodePort --port=8080
+kubectl expose deployment classifier-api --type=NodePort --port=8000
 
 # gives a public ip to access the service
 minikube service web --url
