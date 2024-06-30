@@ -102,6 +102,25 @@ scrape_configs:
         labels:
           app: classifier-api
 ```
+Use this one to enable discovery of all active nodes
+```
+  - job_name: classifier-api
+    scrape_interval: 900ms
+    kubernetes_sd_configs:
+      - role: endpoints
+    relabel_configs:
+      - source_labels: [__meta_kubernetes_pod_label_app]
+        action: keep
+        regex: classifier-api
+      - source_labels: [__address__, __meta_kubernetes_pod_annotation_prometheus_io_port]
+        action: replace
+        target_label: __address__
+        regex: (.+)(?::\d+);(\d+)
+        replacement: $1:$2
+
+```
+
+
 
 # restart prometheus
 kubectl rollout restart deployment prometheus-server
