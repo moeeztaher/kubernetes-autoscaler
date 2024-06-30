@@ -58,7 +58,7 @@ or
 kubectl apply -f app-hpa.yaml
 
 # load test
-kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://test.example; done"
+kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://192.168.49.2:31469; done"
 
 # watch the cpu utilization in the HPA
 kubectl get hpa classifier-api --watch
