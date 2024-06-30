@@ -17,10 +17,3 @@ spec:
         target:
           averageUtilization: 50
           type: Utilization
-    - type: Pods
-      pods:
-        metric:
-          name: get_latency
-        target:
-          type: AverageValue
-          averageValue: 1
