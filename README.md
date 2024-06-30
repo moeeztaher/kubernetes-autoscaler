@@ -87,3 +87,22 @@ kubectl get pods -l app.kubernetes.io/instance=prometheus
 # open prometheus dashboard
 minikube service prometheus-server-np
 
+# check kuberneted configmaps
+kubectl get configmaps
+
+# edit the prometheus config (prometheus-server by default)
+kubectl edit configmap prometheus-server
+
+# add the following target to the scrape config
+```
+scrape_configs:
+  - job_name: 'classifier-api'
+    static_configs:
+      - targets: ['classifier-api:8000']  # Adjust port and endpoint as needed
+        labels:
+          app: classifier-api
+```
+
+# restart prometheus
+kubectl rollout restart deployment prometheus-server
+
