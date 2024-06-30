@@ -4,16 +4,23 @@ metadata:
   name: classifier-api
   namespace: default
 spec:
-  maxReplicas: 10
-  metrics:
-    - resource:
-        name: cpu
-        target:
-          averageUtilization: 10
-          type: Utilization
-      type: Resource
-  minReplicas: 1
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
     name: classifier-api
+  minReplicas: 1
+  maxReplicas: 10
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          averageUtilization: 50
+          type: Utilization
+    - type: Pods
+      pods:
+        metric:
+          name: requests-per-second  # Assuming this is exposed by Prometheus
+        target:
+          type: AverageValue
+          averageValue: 100  # Adjust according to your application's needs
