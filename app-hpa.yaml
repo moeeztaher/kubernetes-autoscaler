@@ -20,7 +20,7 @@ spec:
     - type: Pods
       pods:
         metric:
-          name: requests-per-second  # Assuming this is exposed by Prometheus
+          name: requests-per-second
         target:
           type: AverageValue
-          averageValue: 100  # Adjust according to your application's needs
+          averageValue: 100 
