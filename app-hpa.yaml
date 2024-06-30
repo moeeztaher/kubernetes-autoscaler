@@ -24,10 +24,10 @@ spec:
         target:
           type: AverageValue
           averageValue: 0.25
-     - type: Pods
-       pods:
-         metric:
-           name: get_latency
-         target:
-           type: AverageValue
-           averageValue: 1
+    - type: Pods
+      pods:
+        metric:
+          name: get_latency
+        target:
+          type: AverageValue
+          averageValue: 1
