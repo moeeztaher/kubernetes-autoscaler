@@ -15,5 +15,12 @@ spec:
       resource:
         name: cpu
         target:
-          averageUtilization: 50
           type: Utilization
+          averageUtilization: 50
+    - type: Pods
+      pods:
+        metric:
+          name: get_latency
+        target:
+          type: AverageValue
+          averageValue: 10
