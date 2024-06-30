@@ -106,3 +106,5 @@ scrape_configs:
 # restart prometheus
 kubectl rollout restart deployment prometheus-server
 
+# to restart the classifier-api service
+kubectl rollout restart deployment/classifier-api -n default
