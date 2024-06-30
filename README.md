@@ -23,11 +23,14 @@ minikube addons enable metrics-server
 # deploy the app to minikube according to settings in app-deployment.yaml
 kubectl apply -f app-deployment.yaml
 
+
 # open minikube dashboard
 minikube dashboard
 
+
 #enable ingress in minikube
 minikube addons enable ingress
+
 
 # list ingress pods
 kubectl get pods -n ingress-nginx
