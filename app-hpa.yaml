@@ -20,7 +20,14 @@ spec:
     - type: Pods
       pods:
         metric:
-          name: requests-per-second
+          name: predict_latency
         target:
           type: AverageValue
-          averageValue: 100 
+          averageValue: 0.25
+     - type: Pods
+       pods:
+         metric:
+           name: get_latency
+         target:
+           type: AverageValue
+           averageValue: 1
