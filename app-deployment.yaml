@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
         - name: classifier-app
-          image: taihim18/resnet-classifier:v1.0.0
+          image: taihim18/resnet-classifier:latest
           ports:
             # This is the port we'll expose to the internet eventually
             - name: web
