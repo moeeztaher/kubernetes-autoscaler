@@ -40,7 +40,7 @@ kubectl get pods -n ingress-nginx
 kubectl expose deployment classifier-api --type=NodePort --port=8000
 
 # gives a public ip to access the service
-minikube service web --url
+minikube service classifier-api --url
 
 # create ingress object, uses nginx, routes traffic to the service
 kubectl apply -f app-ingress.yaml
