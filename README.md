@@ -16,7 +16,7 @@ chmod 700 get_helm.sh
 minikube start
 
 
-#enable metrics server
+# enable metrics server
 minikube addons enable metrics-server
 
 
@@ -28,7 +28,7 @@ kubectl apply -f app-deployment.yaml
 minikube dashboard
 
 
-#enable ingress in minikube
+# enable ingress in minikube
 minikube addons enable ingress
 
 
